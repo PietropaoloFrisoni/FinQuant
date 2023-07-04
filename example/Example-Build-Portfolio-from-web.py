@@ -40,10 +40,10 @@ from finquant.portfolio import build_portfolio
 # <codecell>
 
 d = {
-    0: {"Name": "WIKI/GOOG", "Allocation": 20},
-    1: {"Name": "WIKI/AMZN", "Allocation": 10},
-    2: {"Name": "WIKI/MCD", "Allocation": 15},
-    3: {"Name": "WIKI/DIS", "Allocation": 18},
+    0: {"Name": "GOOG", "Allocation": 20.0},
+    1: {"Name": "AMZN", "Allocation": 10.0},
+    2: {"Name": "MCD", "Allocation": 15.0},
+    3: {"Name": "DIS", "Allocation": 18.0},
 }
 # If you wish to use Yahoo Finance as source, you must remove "WIKI/" from the stock names/tickers
 
@@ -80,7 +80,11 @@ end_date = "2017-12-31"
 # e.g. high, low, close, etc, FinQuant will extract the column "Adj. Close" ("Adj Close" if using yfinance).
 
 pf = build_portfolio(
-    names=names, pf_allocation=pf_allocation, start_date=start_date, end_date=end_date
+    names=names,
+    pf_allocation=pf_allocation,
+    start_date=start_date,
+    end_date=end_date,
+    data_api="yfinance",
 )
 
 # <markdowncell>
